@@ -59,6 +59,7 @@ figure, header, nav, section, article, aside, footer, figcaption {
   padding: 25px;
   margin-bottom: 20px;
   transition: transform 0.2s;
+  color: black; /* força todo o texto preto */
 }
 
 .card-section:hover {
@@ -68,13 +69,14 @@ figure, header, nav, section, article, aside, footer, figcaption {
 .card-section h4 {
   text-align: center;
   margin-bottom: 20px;
+  color: black; /* título preto */
 }
 
 .card-section p {
   margin-bottom: 15px;
   line-height: 1.5;
+  color: black; /* parágrafos pretos */
 }
-
 
 html[xmlns] .clearfix {
   display: block;
@@ -2335,4 +2337,5 @@ body {
   }
 
 }
+
 
