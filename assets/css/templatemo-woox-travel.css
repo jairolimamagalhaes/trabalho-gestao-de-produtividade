@@ -52,6 +52,29 @@ figure, header, nav, section, article, aside, footer, figcaption {
 .clearfix {
   display: inline-block;
 }
+.card-section {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.card-section:hover {
+  transform: translateY(-5px);
+}
+
+.card-section h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-section p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
 
 html[xmlns] .clearfix {
   display: block;
@@ -2312,3 +2335,4 @@ body {
   }
 
 }
+
