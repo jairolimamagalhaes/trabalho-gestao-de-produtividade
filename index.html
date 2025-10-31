@@ -1,228 +1,399 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>ClimaTech - Gestão de Produto e Qualidade</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <title>TechClima</title>
+    <style>
+        /* [ ... CÓDIGO CSS ACIMA ... ] */
+        /* Variáveis CSS para fácil customização */
+        :root {
+            --primary-color: #007bff; /* Azul Profissional (Destaque Principal) */
+            --secondary-color: #0056b3; /* Azul Escuro para Interação (Inspirado no Material Design) */
+            --accent-color: #28a745; /* Verde para Ação/Sucesso (Ex: Relatório) */
+            --dark-text: #212529; /* Preto total para alta legibilidade */
+            --light-text: #ffffff; 
+            --background-light: #f8f9fa; /* Fundo Clean */
+            --card-background: #ffffff;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.06); /* Sombra mais suave e limpa */
+            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        /* Estilos gerais */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-light);
+            line-height: 1.7; /* Mais espaço para leitura (Clean Design) */
+            color: var(--dark-text);
+        }
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+        /* Header */
+        .header-area {
+            background: var(--card-background);
+            box-shadow: var(--shadow-subtle);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-TemplateMo 580 Woox Travel
+        .logo img {
+            max-width: 160px;
+        }
+        
+        /* Seções de Conteúdo */
+        .section-heading {
+            margin-bottom: 4rem; /* Mais espaçamento vertical para respiro */
+        }
+        .section-heading h2 {
+            color: var(--dark-text);
+            font-size: 1.5rem; /* Menor e mais contextual */
+            font-weight: 500;
+            margin-bottom: 5px;
+            opacity: 0.7; /* Para dar hierarquia de 'subtítulo' */
+        }
+        .section-heading h1 {
+            color: var(--primary-color);
+            font-size: 3.5rem; /* Maior destaque */
+            font-weight: 800;
+            line-height: 1.1;
+            position: relative;
+            display: inline-block;
+        }
+        .section-heading h1::after {
+            content: '';
+            display: block;
+            width: 100%; /* Sublinhado total no título principal */
+            height: 5px;
+            background: var(--accent-color); /* Usando a cor de destaque (verde) */
+            margin: 10px 0 0;
+            border-radius: 3px;
+        }
 
-https://templatemo.com/tm-580-woox-travel
+        /* Cards */
+        .card {
+            border: 1px solid rgba(0, 0, 0, 0.05); /* Borda muito sutil */
+            border-radius: 12px; 
+            box-shadow: var(--shadow-subtle);
+            margin-bottom: 3rem; /* Mais respiro entre cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--card-background);
+        }
 
--->
+        .card:hover {
+            transform: translateY(-5px); 
+            box-shadow: var(--shadow-hover);
+        }
 
-  </head>
+        .card-header {
+            background-color: var(--primary-color); /* Fundo sólido para clareza */
+            color: var(--light-text);
+            font-weight: 600;
+            font-size: 1.3rem;
+            padding: 1.25rem 1.5rem;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom: none;
+        }
+        /* Estilo para ícones nos headers */
+        .card-header i {
+            margin-right: 12px;
+            font-size: 1.5rem;
+            color: var(--light-text);
+        }
+        
+        .card-body p {
+            color: var(--dark-text);
+            line-height: 1.7;
+            font-size: 1rem; /* Fonte ligeiramente maior */
+        }
+
+        .card-body h5 {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Lista da equipe */
+        .team-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px; /* Mais espaçamento entre os nomes */
+        }
+        .team-list li {
+            background-color: var(--background-light); 
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: var(--dark-text);
+            font-weight: 500;
+            border-left: 4px solid var(--accent-color); /* Linha de destaque */
+        }
+        .team-list li:hover {
+            background-color: #e9ecef;
+        }
+        .team-list i { /* Ícone na lista da equipe */
+            color: var(--accent-color); /* Ícones da equipe com a cor de destaque */
+            margin-right: 10px;
+        }
+        
+        /* Estilos para o container de vídeo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            border-radius: 12px; 
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+        }
+        .video-container iframe,
+        .video-container video { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            object-fit: cover;
+        }
+        
+        /* Botões */
+        .btn-primary {
+            background-color: var(--accent-color); /* Botões com cor de destaque */
+            border-color: var(--accent-color);
+            padding: 12px 30px;
+            border-radius: 50px; 
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
+        }
+        .btn-primary:hover {
+            background-color: #1e7e34;
+            border-color: #1e7e34;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 6rem;
+            background-color: var(--dark-text);
+            color: var(--light-text);
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo para comprimir o 5W2H em colunas */
+        .five-w-item {
+            display: flex;
+            margin-bottom: 0.75rem; 
+            align-items: baseline;
+        }
+        .five-w-item strong {
+            color: var(--primary-color);
+            min-width: 120px; 
+            font-weight: 700;
+        }
+        .five-w-item p {
+            margin: 0;
+            padding-left: 10px;
+            color: var(--dark-text);
+            flex-grow: 1;
+            font-size: 1rem;
+        }
+    </style>
+
+</head>
 
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container" >
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo.png" alt="Logo ClimaTech">
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container my-5">
+        
         <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt=""  >
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    
-                    <!-- ***** Menu End ***** -->
-                </nav>
+            <div class="col-12 text-center mb-5">
+                <div class="section-heading">
+                    <h2>Trabalho de Gestão de Produto e Qualidade</h2>
+                    <h1>Sistema de Automação ClimaTech</h1>
+                </div>
             </div>
         </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
 
-  <!-- ***** Main Banner Area Start ***** -->
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-10">
 
-  <!-- ***** Main Banner Area End ***** -->
-   <div class="visit-country">
-   
-        <div class="col-lg-12">
-          <div class="section-heading" style="text-align:center;">
-          <h2 style="text-align:center; color:black;">Trabalho de Gestão de Produto e Qualidade</h2>
-          <h1 style="text-align:center; color:black;">Automação e Sustentabilidade: Otimizando o Consumo de Energia em Ambientes Acadêmicos</h1>
-          </div>
-    
-    </div>
-   </div>
-  <div class="visit-country">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-heading" style="text-align:center;">
-          <h2 style="text-align:center; color:black;">Equipe do Trabalho</h2>
-            <p style="color:black; font-size:20px; text-align:center;">Ana Carolina da Silva Mendes</p>  
-            <p style="color:black; font-size:20px; text-align:center;">Geremias Nascimento</p>
-            <p style="color:black; font-size:20px; text-align:center;">Jairo Lima Magalhães de Azevedo</p>
-            <p style="color:black; font-size:20px; text-align:center;">João Lucas Rebouças de Souza</p>
-            <p style="color:black; font-size:20px; text-align:center;">Paulo Paiva</p>
-            <p style="color:black; font-size:20px; text-align:center;">Thaissa Marinho Silva</p>
-           
-        </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="items">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="item">
-                  <div class="row">
-                   
-                    <div class="col-lg-12 col-sm-12">
-                      <div class="right-content">
-                        <h4>Pesquisa de Campo para escolha do tema</h4>
-                        <p style="color: black;">Após analisar possíveis problemas que poderiam ser solucionados no IFAM	, identificou-se a necessidade de melhorias nos processos administrativos e operacionais, visando soluções inovadoras e eficientes. Em particular, constatou-se que a gestão de energia da instituição, especialmente no uso de aparelhos de ar-condicionado, é ineficiente, gerando desperdício de energia, aumento de custos e impactos ambientais negativos.
-                            <br>Atualmente, os equipamentos funcionam sem controle inteligente, desconsiderando fatores como temperatura externa, horários de pico e ocupação dos ambientes. Essa situação compromete o orçamento da instituição, sobrecarrega a rede elétrica e prejudica o desempenho sustentável da organização.
-                            <br>Portanto, há uma demanda clara por um sistema de automação inteligente que integre sensores de temperatura, umidade e presença, central de gerenciamento e aplicativos de controle, permitindo otimização de recursos, sustentabilidade ambiental, redução de custos e promoção de boas práticas socioambientais. A implementação dessa solução alinha-se com normas de qualidade (ISO 9000) e gestão ambiental (ISO 14000), fortalecendo a responsabilidade social da instituição.</p>
-                        
-                        
-                      </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-users"></i> Equipe do Trabalho</h4>
                     </div>
-                  </div>
+                    <div class="card-body">
+                        <ul class="team-list">
+                            <li><i class="fas fa-user-tie"></i> Ana Carolina da Silva Mendes</li>
+                            <li><i class="fas fa-user-tie"></i> Geremias</li>
+                            <li><i class="fas fa-user-tie"></i> Jairo Lima Magalhães de Azevedo</li>
+                            <li><i class="fas fa-user-tie"></i> João Lucas Rebouças de Souza</li>
+                            <li><i class="fas fa-user-tie"></i> Paulo Paiva</li>
+                            <li><i class="fas fa-user-tie"></i> Thaissa</li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-             
-             
-             
-            </div>
-          </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-search-dollar"></i> Pesquisa de Campo para Escolha do Tema</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Após analisar possíveis problemas que poderiam ser solucionados no IFAM, identificou-se a necessidade de melhorias nos processos administrativos e operacionais, visando soluções inovadoras e eficientes. Em particular, constatou-se que a gestão de energia da instituição, especialmente no uso de aparelhos de ar-condicionado, é ineficiente, gerando desperdício de energia, aumento de custos e impactos ambientais negativos.</p>
+                        <p>Atualmente, os equipamentos funcionam sem controle inteligente, desconsiderando fatores como temperatura externa, horários de pico e ocupação dos ambientes. Essa situação compromete o orçamento da instituição, sobrecarrega a rede elétrica e prejudica o desempenho sustentável da organização.</p>
+                        <p>Portanto, há uma demanda clara por um sistema de automação inteligente que integre sensores de temperatura, umidade e presença, central de gerenciamento e aplicativos de controle, permitindo otimização de recursos, sustentabilidade ambiental, redução de custos e promoção de boas práticas socioambientais. A implementação dessa solução alinha-se com normas de qualidade (ISO 9000) e gestão ambiental (ISO 14000), fortalecendo a responsabilidade social da instituição.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-list-check"></i> Análise 5W2H</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="text-primary"><i class="fas fa-question-circle"></i> 5W</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="five-w-item"><strong>O Quê? (What):</strong> <p>Implementação de um sistema automatizado de controle de ar-condicionado.</p></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="five-w-item"><strong>Por Quê? (Why):</strong> <p>Reduzir desperdício, diminuir custos operacionais e prolongar a vida útil.</p></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="five-w-item"><strong>Onde? (Where):</strong> <p>Nos prédios CT e CTzinho do campus CMZL, como projeto piloto.</p></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="five-w-item"><strong>Quando? (When):</strong> <p>Imediatamente após aquisição dos sensores, seguindo cronograma estruturado.</p></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="five-w-item"><strong>Quem? (Who):</strong> <p>Alunos voluntários da Eng. Software, infraestrutura e coordenação.</p></div>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <h5 class="text-primary"><i class="fas fa-sliders-h"></i> 2H</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="five-w-item"><strong>Como? (How):</strong> <p>Através de central de gerenciamento via aplicativo e sensores de presença/temperatura.</p></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="five-w-item"><strong>Quanto? (How Much):</strong> <p>Investimento estimado entre R$ 5.000 e R$ 20.000 por unidade piloto.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-globe-americas"></i> Normas ISO e Objetivos de Desenvolvimento Sustentável (ODS)</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>ISO 9001:</strong> Essa norma internacional de gestão da qualidade garante que processos sejam estruturados, monitorados e continuamente melhorados. No contexto do projeto de automação, a ISO 9001 se alinha ao padronizar rotinas de uso, medir resultados e aplicar ajustes baseados em indicadores, assegurando eficiência, confiabilidade e satisfação dos usuários.</p>
+                        <p><strong>ISO 14001:</strong> Voltada para sistemas de gestão ambiental, a ISO 14001 contribui diretamente para a sustentabilidade do projeto. A norma orienta a redução de impactos ambientais e o uso racional de recursos. Assim, o controle inteligente de climatização promove economia de energia e fortalece o compromisso da instituição com práticas sustentáveis.</p>
+                        <p><strong>ODS 7 – Energia Acessível e Limpa:</strong> Esse Objetivo de Desenvolvimento Sustentável da ONU tem relação direta com a proposta, pois busca garantir o acesso confiável e sustentável à energia. A automação do consumo se conecta a essa meta ao promover eficiência energética e incentivar o uso consciente da eletricidade, alinhando a inovação tecnológica com responsabilidade ambiental e social.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-clipboard-check"></i> Validação do Problema e Relatório
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-12 mb-4">
+                            
+                            <div class="video-container">
+                                 <iframe 
+                                     src="assets/videos/video.mp4" 
+                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" 
+                                     allowfullscreen>
+                                 </iframe>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="col-12">
+                            <p>Nesta etapa, a equipe realizou uma visita técnica às salas de aula do Ctzinho para validar a hipótese do problema de climatização. Foi constatada a ineficiência do processo, observando-se um atraso no acionamento do ar-condicionado para o início de uma aula, o que prejudicou o conforto acadêmico.</p>
+                            <p>Com o problema validado, a equipe se reuniu para o direcionamento técnico do protótipo. Foi definida a plataforma **Arduíno** para o controle dos sensores e atuadores, e iniciada a pesquisa sobre a compatibilidade dos sistemas de controle por infravermelho com os aparelhos de ar-condicionado existentes (Elgin), permitindo que o desenvolvimento do projeto avance de forma mais estruturada.</p>
+                            <p class="mt-3"><a href="https://docs.google.com/document/d/1sMHuAVcLBshr8HDVNoc7Xm8IbvM823GXkgUIztIeF0E/edit?tab=t.0" class="btn btn-sm btn-primary" target="_blank">Ver Relatório Completo</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-mobile-alt"></i> Prototipagem do Site
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        
+                        
+                        <div class="col-12">
+                            <p>Com o problema inequivocamente validado, a equipe avançou para o direcionamento técnico do protótipo. Foi definida a plataforma Arduino como o coração do sistema, responsável pelo controle inteligente dos sensores e atuadores. Paralelamente, iniciamos a pesquisa de compatibilidade dos sistemas de controle por infravermelho com a marca de ar-condicionado predominante no campus (Elgin). Esta abordagem estruturada garante que o desenvolvimento do protótipo se concentre em uma solução técnica viável e diretamente aplicável aos equipamentos existentes no IFAM/CMZL.</p>
+                            <p class="mt-3"><a href="https://www.figma.com/design/pmlSttQFyzOlq0c6mJWYlb/Mockup-para-Controle-de-Ar?node-id=0-1&t=8azeZX1CKr2ZEbF0-1" class="btn btn-sm btn-primary" target="_blank">Verificar Protótipo do Aplicativo</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-hand-holding-usd"></i> Investimento e Projeção de Custo Real</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-12 mb-4">
+                            <div class="video-container">
+                                <video controls>
+                                    <source src="assets/videos/custros.mp4" type="video/mp4">
+                                    Seu navegador não suporta a tag de vídeo.
+                                </video>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <p>O detalhamento completo do custo do projeto (Fase I e Projeção de Escala) está integralmente explicado e justificado no vídeo acima. Assista para entender a viabilidade do investimento no IFAM/CMZL.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="items">
+    </main>
+
+    <footer>
+        <div class="container">
             <div class="row">
-              <div class="col-lg-12">
-                <div class="item">
-                  <div class="row">
-                   
-                    <div class="col-lg-12 col-sm-12">
-                      <div class="right-content">
-                          <h4>5W e 2H</h4>
-                          <div class="container mb-5">
-
-  <!-- Card 5W -->
-  <div class="card-section mb-4">
-    <h4>5W</h4>
-    <p><strong>O Quê? (What):</strong> Implementação de um sistema automatizado de controle de ar-condicionado, capaz de ajustar temperatura, ligar/desligar equipamentos, monitorar consumo de energia em tempo real e gerar relatórios de desempenho.</p>
-    <p><strong>Por Quê? (Why):</strong> Reduzir desperdício de energia, diminuir custos operacionais, prolongar a vida útil dos equipamentos, melhorar o conforto ambiental e promover práticas sustentáveis alinhadas às normas ISO 9000 e ISO 14000.</p>
-    <p><strong>Onde? (Where):</strong> Nos prédios CT e CTzinho do campus CMZL, como projeto piloto, permitindo análise comparativa de resultados antes da expansão para outros setores da instituição.</p>
-    <p><strong>Quando? (When):</strong> Implantação planejada imediatamente após aquisição dos sensores, seguindo um cronograma estruturado com fases de instalação, configuração, treinamento e acompanhamento inicial.</p>
-    <p><strong>Quem? (Who):</strong> Alunos voluntários do curso de Engenharia de Software, equipe de infraestrutura e coordenação administrativa.</p>
-  </div>
-
-  <!-- Card 2H -->
-  <div class="card-section">
-    <h4>2H</h4>
-    <p><strong>Como? (How):</strong> Através de uma central de gerenciamento via aplicativo, integrada a sensores de temperatura, umidade e presença, permitindo controle remoto, programação automática e alertas de manutenção.</p>
-    <p><strong>Quanto? (How Much):</strong> Investimento estimado entre R$ 5.000 e R$ 20.000 por unidade piloto, considerando sensores, software, instalação, testes e treinamentos.</p>
-  </div>
-  <div class="card-section">
-    <h4>ISOS</h4>
-    <p>ISO 9001: Essa norma internacional de gestão da qualidade garante que processos sejam estruturados, monitorados e continuamente melhorados. No contexto do projeto de automação para controle de ar-condicionado, a ISO 9001 se alinha ao padronizar rotinas de uso, medir resultados e aplicar ajustes baseados em indicadores, assegurando eficiência, confiabilidade e satisfação dos usuários em ambientes acadêmicos.
-<br><br>
-ISO 14001: Voltada para sistemas de gestão ambiental, a ISO 14001 contribui diretamente para a sustentabilidade do projeto. A norma orienta a redução de impactos ambientais, o uso racional de recursos e a conformidade com legislações ambientais. Assim, o controle inteligente de climatização promove economia de energia, reduz emissões de carbono e fortalece o compromisso da instituição com práticas sustentáveis.
-<br><br>
-ODS 7 – Energia Acessível e Limpa: Esse Objetivo de Desenvolvimento Sustentável da ONU tem relação direta com a proposta, pois busca garantir o acesso confiável, sustentável e moderno à energia. A automação do consumo em ambientes acadêmicos se conecta a essa meta ao promover eficiência energética, reduzir desperdícios e incentivar o uso consciente da eletricidade, alinhando a inovação tecnológica com responsabilidade ambiental e social.</p>
-  </div>
-</div>
-                      </div>
-                  </div>
-
-                  </div>
+                <div class="col-lg-12">
+                    <p>Copyright © 2025 <a href="#">Equipe ClimaTech</a>. Todos os direitos reservados.</p>
                 </div>
-              </div>
-             
-             
-             
             </div>
-          </div>
         </div>
-      </div>
-      
-    </div>
-  </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2025 <a href="#">Equipe Clima Tech</a>. </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/wow.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
-
-  <script>
-    function bannerSwitcher() {
-      next = $('.sec-1-input').filter(':checked').next('.sec-1-input');
-      if (next.length) next.prop('checked', true);
-      else $('.sec-1-input').first().prop('checked', true);
-    }
-
-    var bannerTimer = setInterval(bannerSwitcher, 5000);
-
-    $('nav .controls label').click(function() {
-      clearInterval(bannerTimer);
-      bannerTimer = setInterval(bannerSwitcher, 5000)
-    });
-  </script>
-
-  </body>
-
+    </body>
 </html>
-
-
-
-
-
-

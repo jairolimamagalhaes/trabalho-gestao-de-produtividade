@@ -52,31 +52,6 @@ figure, header, nav, section, article, aside, footer, figcaption {
 .clearfix {
   display: inline-block;
 }
-.card-section {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  padding: 25px;
-  margin-bottom: 20px;
-  transition: transform 0.2s;
-  color: black; /* força todo o texto preto */
-}
-
-.card-section:hover {
-  transform: translateY(-5px);
-}
-
-.card-section h4 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: black; /* título preto */
-}
-
-.card-section p {
-  margin-bottom: 15px;
-  line-height: 1.5;
-  color: black; /* parágrafos pretos */
-}
 
 html[xmlns] .clearfix {
   display: block;
@@ -362,7 +337,7 @@ Header Style
 }
 
 .header-area {
-  background-color:  #6f7272;
+  background-color: #6f7272;
   position: absolute;
   height: 70px;
   top: 0;
@@ -632,14 +607,14 @@ Header Style
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color:  #6f7272!important;
+    color: #22b3c1!important;
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
     width: 100%;
   }
   .header-area {
-    background-color:  #6f7272;
+    background-color: #22b3c1;
     padding: 0px 15px;
     height: 100px;
     box-shadow: none;
@@ -693,9 +668,9 @@ Header Style
   }
   .header-area .main-nav .nav li a:hover {
     background: #f7f7f7 !important;
-    color:  #6f7272!important;
+    color: #22b3c1!important;
   }
-  .header-area .main-nav .nav li.has-sub ul.sub-menu {
+  .header-area .main-nav .nav li.has-sub ul.sub-menu { 
     position: relative;
     visibility: inherit;
     opacity: 1;
@@ -711,10 +686,10 @@ Header Style
     font-size: 12px;
     font-weight: 400;
   }
-  .header-area .main-nav .nav li.submenu ul li a:hover:before {
+  .header-area .main-nav .nav li.submenu ul li a:hover  {
     width: 0px;
   }
-  .header-area .main-nav .nav li.has-sub ul.sub-menu {
+  .header-area .main-nav .nav li.has-sub ul.sub-menu { 
     height: auto;
   }
   .header-area .main-nav .nav li.has-sub:after {
@@ -723,7 +698,7 @@ Header Style
     font-size: 14px;
     top: 15px;
   }
-  .header-area .main-nav .nav li.submenu:hover ul, .header-area .main-nav .nav li.submenu:focus ul {
+  .header-area .main-nav .nav li.submenu:hover ul, .he ea .main-nav .nav li.submenu:focus ul {
     height: 0px;
   }
 }
@@ -1108,6 +1083,32 @@ Call To Action Style
   color: #22b3c1;
 }
 
+.card-section {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+  color: black; /* força todo o texto preto */
+}
+
+.card-section:hover {
+  transform: translateY(-5px);
+}
+
+.card-section h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black; /* título preto */
+}
+
+.card-section p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+  color: black; /* parágrafos pretos */
+}
+
 
 /* 
 ---------------------------------------------
@@ -1116,7 +1117,7 @@ Footer Style
 */
 
 footer {
-  background-color:  #6f7272;
+  background-color: #22b3c1;
   text-align: center;
   padding: 25px 0px;
 }
@@ -2335,7 +2336,4 @@ body {
   .weekly-offers .container-fluid {
     padding: 0px;
   }
-
 }
-
-
