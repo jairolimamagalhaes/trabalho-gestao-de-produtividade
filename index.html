@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* [ ... CÓDIGO CSS ACIMA ... ] */
         /* Variáveis CSS para fácil customização */
         :root {
             --primary-color: #007bff; /* Azul Profissional (Destaque Principal) */
@@ -106,10 +108,12 @@
             color: var(--light-text);
         }
         
+        /* AJUSTE ESSENCIAL: Aplicando Justify nos Parágrafos para Alinhamento Profissional */
         .card-body p {
             color: var(--dark-text);
             line-height: 1.7;
-            font-size: 1rem; /* Fonte ligeiramente maior */
+            font-size: 1rem; 
+            text-align: justify; /* <--- TEXTO JUSTIFICADO */
         }
 
         .card-body h5 {
@@ -146,10 +150,11 @@
         /* Estilos para o container de vídeo */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; 
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             border-radius: 12px; 
-            box-shadow: var(--shadow-medium);
+            box-shadow: var(--shadow-subtle);
             overflow: hidden;
+            margin-bottom: 0.5rem; /* Reduzido para encaixar legenda */
         }
         .video-container iframe,
         .video-container video { 
@@ -170,6 +175,8 @@
             border-radius: 50px; 
             font-weight: 600;
             box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
+            display: inline-flex; 
+            align-items: center;
         }
         .btn-primary:hover {
             background-color: #1e7e34;
@@ -210,6 +217,7 @@
             color: var(--dark-text);
             flex-grow: 1;
             font-size: 1rem;
+            text-align: left; 
         }
     </style>
 
@@ -223,7 +231,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png" alt="Logo ClimaTech">
+                            <img src="assets/images/logo.png" alt="Logo ClimaTech"> 
                         </a>
                     </nav>
                 </div>
@@ -251,11 +259,11 @@
                     <div class="card-body">
                         <ul class="team-list">
                             <li><i class="fas fa-user-tie"></i> Ana Carolina da Silva Mendes</li>
-                            <li><i class="fas fa-user-tie"></i> Geremias</li>
+                            <li><i class="fas fa-user-tie"></i> Geremias Nascimento</li>
                             <li><i class="fas fa-user-tie"></i> Jairo Lima Magalhães de Azevedo</li>
                             <li><i class="fas fa-user-tie"></i> João Lucas Rebouças de Souza</li>
                             <li><i class="fas fa-user-tie"></i> Paulo Paiva</li>
-                            <li><i class="fas fa-user-tie"></i> Thaissa</li>
+                            <li><i class="fas fa-user-tie"></i> Thaissa Marinho</li>
                         </ul>
                     </div>
                 </div>
@@ -270,6 +278,58 @@
                         <p>Portanto, há uma demanda clara por um sistema de automação inteligente que integre sensores de temperatura, umidade e presença, central de gerenciamento e aplicativos de controle, permitindo otimização de recursos, sustentabilidade ambiental, redução de custos e promoção de boas práticas socioambientais. A implementação dessa solução alinha-se com normas de qualidade (ISO 9000) e gestão ambiental (ISO 14000), fortalecendo a responsabilidade social da instituição.</p>
                     </div>
                 </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-clipboard-check"></i> Validação Incontestável do Problema
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-12 mb-4">
+                            <p>Nesta etapa crucial, a equipe realizou **três visitas técnicas em datas distintas** às salas de aula do Ctzinho, gravando os vídeos abaixo para garantir a **validação incontestável** da hipótese do problema de climatização. Foi comprovada a ineficiência do processo em múltiplas ocasiões, observando-se o atraso ou a ausência de controle no acionamento do ar-condicionado para o início das aulas, o que prejudica diretamente o conforto acadêmico e gera desperdício energético.</p>
+                            <p>Com o problema validado, a equipe se reuniu para o direcionamento técnico do protótipo. Foi definida a plataforma **Arduino** como o coração do sistema, responsável pelo controle inteligente dos sensores e atuadores. Paralelamente, iniciamos a pesquisa de compatibilidade dos sistemas de controle por infravermelho com a marca de ar-condicionado predominante no campus (Elgin). Esta abordagem estruturada garante que o desenvolvimento do protótipo se concentre em uma solução técnica viável e diretamente aplicável aos equipamentos existentes no IFAM/CMZL.</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 mb-3"> 
+                                    <p class="text-center small text-muted">Vídeo 01: Gravado em 12/09/25, às 15:30.</p>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="assets/videos/video.mp4" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            
+                            </div>
+                            <div class="col-12 mb-3">
+                                  <p class="text-center small text-muted">Vídeo 02: Gravado em 24/09/25, às 16h:09.</p>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="assets/videos/video2.mp4" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                               
+                            </div>
+                            <div class="col-12 mb-3">
+                                <p class="text-center small text-muted">Vídeo 03: Gravado em 12/11/25, por volta das 16h:30.</p>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="assets/videos/video3.mp4" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                 
+                            </div>
+                        </div>
+
+                        <p class="mt-3"><a href="https://docs.google.com/document/d/1sMHuAVcLBshr8HDVNoc7Xm8IbvM823GXkgUIztIeF0E/edit?tab=t.0" class="btn btn-sm btn-primary" target="_blank"><i class="fas fa-file-alt me-2"></i> Ver Relatório Completo</a></p>
+                    </div>
+                </div>
+
 
                 <div class="card">
                     <div class="card-header">
@@ -307,7 +367,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="card-header">
                         <h4><i class="fas fa-globe-americas"></i> Normas ISO e Objetivos de Desenvolvimento Sustentável (ODS)</h4>
@@ -321,41 +381,14 @@
                 
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fas fa-clipboard-check"></i> Validação do Problema e Relatório
-                        </h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="col-12 mb-4">
-                            
-                            <div class="video-container">
-                                 <iframe 
-                                     src="assets/videos/video.mp4" 
-                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" 
-                                     allowfullscreen>
-                                 </iframe>
-                            </div>
-                            
-                        </div>
-                        
-                        <div class="col-12">
-                            <p>Nesta etapa, a equipe realizou uma visita técnica às salas de aula do Ctzinho para validar a hipótese do problema de climatização. Foi constatada a ineficiência do processo, observando-se um atraso no acionamento do ar-condicionado para o início de uma aula, o que prejudicou o conforto acadêmico.</p>
-                            <p>Com o problema validado, a equipe se reuniu para o direcionamento técnico do protótipo. Foi definida a plataforma **Arduíno** para o controle dos sensores e atuadores, e iniciada a pesquisa sobre a compatibilidade dos sistemas de controle por infravermelho com os aparelhos de ar-condicionado existentes (Elgin), permitindo que o desenvolvimento do projeto avance de forma mais estruturada.</p>
-                            <p class="mt-3"><a href="https://docs.google.com/document/d/1sMHuAVcLBshr8HDVNoc7Xm8IbvM823GXkgUIztIeF0E/edit?tab=t.0" class="btn btn-sm btn-primary" target="_blank">Ver Relatório Completo</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
                         <h4><i class="fas fa-mobile-alt"></i> Prototipagem do Site
                         </h4>
                     </div>
                     <div class="card-body">
                         
-                        
                         <div class="col-12">
-                            <p>Com o problema inequivocamente validado, a equipe avançou para o direcionamento técnico do protótipo. Foi definida a plataforma Arduino como o coração do sistema, responsável pelo controle inteligente dos sensores e atuadores. Paralelamente, iniciamos a pesquisa de compatibilidade dos sistemas de controle por infravermelho com a marca de ar-condicionado predominante no campus (Elgin). Esta abordagem estruturada garante que o desenvolvimento do protótipo se concentre em uma solução técnica viável e diretamente aplicável aos equipamentos existentes no IFAM/CMZL.</p>
-                            <p class="mt-3"><a href="https://www.figma.com/design/pmlSttQFyzOlq0c6mJWYlb/Mockup-para-Controle-de-Ar?node-id=0-1&t=8azeZX1CKr2ZEbF0-1" class="btn btn-sm btn-primary" target="_blank">Verificar Protótipo do Aplicativo</a></p>
+                            <p>Com o problema inequivocamente validado, a equipe avançou para o direcionamento técnico do protótipo. Foi definida a plataforma **Arduino** como o coração do sistema, responsável pelo controle inteligente dos sensores e atuadores. Paralelamente, iniciamos a pesquisa de compatibilidade dos sistemas de controle por infravermelho com a marca de ar-condicionado predominante no campus (Elgin). Esta abordagem estruturada garante que o desenvolvimento do protótipo se concentre em uma solução técnica viável e diretamente aplicável aos equipamentos existentes no IFAM/CMZL.</p>
+                            <p class="mt-3"><a href="https://www.figma.com/design/pmlSttQFyzOlq0c6mJWYlb/Mockup-para-Controle-de-Ar?node-id=0-1&t=8azeZX1CKr2ZEbF0-1" class="btn btn-sm btn-primary" target="_blank"><i class="fas fa-mobile-screen-button me-2"></i> Verificar Protótipo do Aplicativo</a></p>
                         </div>
                     </div>
                 </div>
@@ -365,6 +398,10 @@
                         <h4><i class="fas fa-hand-holding-usd"></i> Investimento e Projeção de Custo Real</h4>
                     </div>
                     <div class="card-body">
+                        <div class="col-12">
+                            <p>O detalhamento completo do custo do projeto (Fase I e Projeção de Escala) está integralmente explicado e justificado no vídeo abaixo. Assista para entender a viabilidade do investimento no IFAM/CMZL.</p>
+                        </div>
+                        
                         <div class="col-12 mb-4">
                             <div class="video-container">
                                 <video controls>
@@ -372,10 +409,6 @@
                                     Seu navegador não suporta a tag de vídeo.
                                 </video>
                             </div>
-                        </div>
-
-                        <div class="col-12">
-                            <p>O detalhamento completo do custo do projeto (Fase I e Projeção de Escala) está integralmente explicado e justificado no vídeo acima. Assista para entender a viabilidade do investimento no IFAM/CMZL.</p>
                         </div>
                     </div>
                 </div>
